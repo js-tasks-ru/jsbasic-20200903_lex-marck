@@ -8,5 +8,4 @@ function sum(m, n) {
   let calc = m + n;
   return calc;
 }
-
 sum(2,6);
