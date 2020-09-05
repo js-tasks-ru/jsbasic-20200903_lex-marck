@@ -5,5 +5,8 @@
  * @returns {number}
  */
 function sum(m, n) {
-  // ваш код...
+  let calc = m + n;
+  return calc;
 }
+
+sum(2,6);
