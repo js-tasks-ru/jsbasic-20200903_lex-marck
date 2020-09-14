@@ -4,5 +4,7 @@
  * @returns {string}
  */
 function ucFirst(str) {
-  // ваш код...
+  let firstChartBig =  str.charAt(0).toUpperCase();
+  let newWord = firstChartBig + str.slice(1);
+  return newWord;
 }
