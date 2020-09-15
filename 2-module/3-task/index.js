@@ -1,5 +1,18 @@
+let firstOperand;
+let secondOperand;
 let calculator = {
-  // ваш код
+  read(a, b) {
+    firstOperand = a;
+    secondOperand = b;
+  },
+  sum() {
+    let sum = firstOperand + secondOperand;
+    return sum;
+  },
+  mul() {
+    let mul = firstOperand * secondOperand;
+    return mul;
+  },
 };
 
 // НЕ УДАЛЯТЬ СТРОКУ, НУЖНА ДЛЯ ПРОВЕРКИ
