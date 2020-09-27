@@ -30,31 +30,65 @@ function highlight(table) {
 
   for (const item of tbodyCells) {
 
-    if ( item.cellIndex == indexCellStatus && item.hasAttribute('data-available') && item.dataset.available == 'true' ) {
+    if (item.cellIndex == indexCellStatus) {
 
-      item.closest('tr').classList.add('available');
+      if (item.hasAttribute('data-available')) {
 
-    } else if ( item.cellIndex == indexCellStatus && item.hasAttribute('data-available') && item.dataset.available == 'false' ) {
+        if (item.dataset.available == 'true' ) {
 
-      item.closest('tr').classList.add('unavailable');
+          item.closest('tr').classList.add('available');
+
+        } else {
+
+          item.closest('tr').classList.add('unavailable');
+
+        }
+        
+      }
+
+      if (item.dataset.available == null)  {
+        item.closest('tr').setAttribute('hidden', true);
+      }
+
+    }
+
+    if ( item.cellIndex == indexCellGender ) {
+
+      if ( item.textContent == 'm'  ) {
+
+        item.closest('tr').classList.add('male');
+
+      } else {
+        item.closest('tr').classList.add('female');
+      }
 
     }
 
-    if ( item.cellIndex == indexCellStatus && item.dataset.available == null ) {
+    // if ( item.cellIndex == indexCellStatus && item.hasAttribute('data-available') && item.dataset.available == 'true' ) {
+    //
+    //   item.closest('tr').classList.add('available');
+    //
+    // } else if ( item.cellIndex == indexCellStatus && item.hasAttribute('data-available') && item.dataset.available == 'false' ) {
+    //
+    //   item.closest('tr').classList.add('unavailable');
+    //
+    // }
+    //
+    // if ( item.cellIndex == indexCellStatus && item.dataset.available == null ) {
+    //
+    //   item.closest('tr').setAttribute('hidden', true);
+    //
+    // }
 
-      item.closest('tr').setAttribute('hidden', true);
-
-    }
-
-    if ( item.cellIndex == indexCellGender && item.textContent == 'm' ) {
-
-      item.closest('tr').classList.add('male');
-
-    } else if ( item.cellIndex == indexCellGender && item.textContent == 'f' ) {
-
-      item.closest('tr').classList.add('female');
-
-    }
+    // if ( item.cellIndex == indexCellGender && item.textContent == 'm' ) {
+    //
+    //   item.closest('tr').classList.add('male');
+    //
+    // } else if ( item.cellIndex == indexCellGender && item.textContent == 'f' ) {
+    //
+    //   item.closest('tr').classList.add('female');
+    //
+    // }
 
     if (item.cellIndex == indexCellAge &&  +item.textContent < 18) {
       item.closest('tr').style.textDecoration = 'line-through';
