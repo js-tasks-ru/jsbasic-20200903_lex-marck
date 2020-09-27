@@ -12,7 +12,7 @@ function makeDiagonalRed(table) {
 
   let itemsInRow = itemsLength /  rowLength;
 
-  for(const key in items) {
+  for(const el of items) {
 
     if(items[count] !== undefined) {
       items[count].style.backgroundColor = 'red';
