@@ -4,8 +4,8 @@
  */
 function makeDiagonalRed(table) {
   let count = 0;
-  let row = document.querySelectorAll('tr');
-  let items = document.querySelectorAll('td');
+  let row = table.querySelectorAll('tr');
+  let items = table.querySelectorAll('td');
 
   let rowLength = row.length;
   let itemsLength = items.length;
@@ -20,5 +20,5 @@ function makeDiagonalRed(table) {
 
     count += (itemsInRow + 1);
   }
-  
+
 }
