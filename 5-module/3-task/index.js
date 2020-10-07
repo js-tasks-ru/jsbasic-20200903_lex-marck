@@ -4,7 +4,7 @@ function initCarousel() {
   const nextBtn = document.querySelector('.carousel__arrow_right');
   const slides = document.querySelectorAll('.carousel__slide');
   const slideWidth = document.querySelector('.carousel__slide').clientWidth;
-  const sliderWidth = slideWidth*slides.length;
+  const maxTranslateWidth = slideWidth*(slides.length - 1);
   let cssWidth = 0;
 
   prevBtn.style.display = 'none';
@@ -17,7 +17,7 @@ function initCarousel() {
 
         cssWidth += slideWidth;
 
-        if( cssWidth == sliderWidth - slideWidth ) {
+        if( cssWidth == maxTranslateWidth ) {
           nextBtn.style.display = 'none';
         }
 
