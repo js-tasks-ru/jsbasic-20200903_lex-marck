@@ -43,7 +43,7 @@ function highlight(table) {
           item.closest('tr').classList.add('unavailable');
 
         }
-        
+
       }
 
       if (item.dataset.available == null)  {
